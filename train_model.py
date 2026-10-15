@@ -40,5 +40,11 @@ print("Accuracy:", round(accuracy_score(y_test, pred), 4))
 print("\nClassification Report:\n", classification_report(y_test, pred))
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, pred))
 
+
+import os
+os.makedirs("models", exist_ok=True)
+
+joblib.dump(model, "models/customer_satisfaction_model.pkl")
+print("\nModel saved to models/customer_satisfaction_model.pkl")
 joblib.dump(model, "models/customer_satisfaction_model.pkl")
 print("\nModel saved to models/customer_satisfaction_model.pkl")
